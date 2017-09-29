@@ -2,13 +2,13 @@ const { LocalStorage } = require('node-localstorage');
 
 const localStorage = new LocalStorage('./scratch');
 
-const postIts = (localStorage.getPostIt('whiteboardList')) ?
-  JSON.parse(localStorage.getPostIt('whiteboardList')) : {};
+const postIts = (localStorage.getItem('whiteboardList')) ?
+  JSON.parse(localStorage.getItem('whiteboardList')) : {};
 
 const uuidv4 = require('uuid/v4');
 
 function save() {
-  localStorage.setPostIt('whiteboardList', JSON.stringify(postIts));
+  localStorage.setItem('whiteboardList', JSON.stringify(postIts));
 }
 
 const publicAPI = {};
