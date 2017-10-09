@@ -38,7 +38,7 @@ const update = (req, res) => {
   const infoList = req.body.infoList;
   const authorName = req.body.authorName;
   const color = req.body.color;
-  whiteboardPostIts.update({ id, title, infoList, authorName, color });
+  whiteboardPostIts.update(id, title, infoList, authorName, color);
   res.status(204).send();
 };
 
